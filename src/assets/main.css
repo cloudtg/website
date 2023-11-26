@@ -9,7 +9,19 @@
   gap: 50px;
   margin-top: 45vh;
   margin-bottom: 20px;
-  transform: translateY(-50%)
+  transform: translateY(-40%)
+}
+
+.contact-info {
+  color: #213547;
+}
+
+#footer {
+  /* 定位在页面的最低部（可滑动） */
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 @supports (animation-timeline: scroll(root y)) {
@@ -223,7 +235,6 @@ html::view-transition-old(root) {
 
 #background {
   position: fixed;
-  z-index: -2;
   background-color: var(--md-sys-color-on-tertiary-container, #242424);
   will-change: filter;
   top: -30px;
@@ -235,13 +246,15 @@ html::view-transition-old(root) {
 }
 
 #background .background-image {
+  z-index: -99;
+  background-image: var(--bg_img);
+  opacity: .5;
   position: absolute;
   inset: 0;
-  background-image: url("https://api.prts.top/v1/img/wallpaper/?type=cdn");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  animation: fadeIn 1s ease
+  animation: fadeIn 1s ease;
 }
 
 @supports not (animation-timeline: scroll(root y)) {
